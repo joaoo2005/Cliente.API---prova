@@ -14,17 +14,17 @@ public class Cliente {
     private String cep;
     private String numero;
     private String formaDePagamento;
-    private String parcela;
+    private Integer parcelas;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Itens> itens;
 
-    public Cliente(String endereco, String cep, String numero, String formaDePagamento, String parcela, List<Itens> itens) {
+    public Cliente(String endereco, String cep, String numero, String formaDePagamento, Integer parcelas, List<Itens> itens) {
         this.endereco = endereco;
         this.cep = cep;
         this.itens = itens;
         this.numero = numero;
         this.formaDePagamento = formaDePagamento;
-        this.parcela = parcela;
+        this.parcelas = parcelas;
     }
 
     public Cliente() {
@@ -66,12 +66,12 @@ public class Cliente {
         this.formaDePagamento = formaDePagamento;
     }
 
-    public String getParcela() {
-        return parcela;
+    public Integer getParcelas() {
+        return parcelas;
     }
 
-    public void setParcela(String parcela) {
-        this.parcela = parcela;
+    public void setParcelas(Integer parcelas) {
+        this.parcelas = parcelas;
     }
 
     public List<Itens> getItens() {
